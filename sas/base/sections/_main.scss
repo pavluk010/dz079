@@ -1,5 +1,6 @@
-.main{
 
+.main{
+@include flex-center;
 &__title{
     color: green;
     }
@@ -8,11 +9,6 @@
   color: red;  
 }
 
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-background-color: aqua;
 
 
 &__image{
@@ -38,13 +34,16 @@ font-size: 40px;
 }
 
 &__btn{
-    border: none;
-    border-radius: 10px;
-background-color: red;
-    padding: 25px;
-    color: yellow;
-    cursor: pointer;
-    font-family: Arial, Helvetica, sans-serif;
+ width: 100%;
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 10px;
+  background-color: red;
+  padding: 25px;
+  color: yellow;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 &__btn:hover{
@@ -82,12 +81,21 @@ padding: 20px 10px;
     }
 
     &__btn {
-      width: 100%;
-      max-width: 250px;
-      padding: 15px;
+width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+
+  border: none;
+  border-radius: 10px;
+  background-color: red;
+  padding: 25px;
+  color: yellow;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+    }
     }
 
- @media (min-width: 481px) and (max-width: 768px) {
+ @media (min-width: 481px) and (max-width: 767px)   {
     padding: 30px 20px;
 
     &__title {
@@ -113,10 +121,34 @@ padding: 20px 10px;
 
     &__btn {
       padding: 20px 40px;
+        width: 100%;
+  box-sizing: border-box;
     }
+     .main__center {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.main__left {
+  flex: 0 0 40%;
+  min-width: 0;
+}
+
+.main__right {
+  flex: 1;
+  min-width: 0;
+}
+
+.main__image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
   }
 
-}
+
 
 @media (min-width:1200px){
  &__image {
@@ -131,4 +163,6 @@ padding: 20px 10px;
 
 
 
+
 }
+

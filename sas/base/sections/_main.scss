@@ -1,4 +1,6 @@
 
+@use "../mixins" as *;
+
 .main{
 @include flex-center;
 &__title{
@@ -6,15 +8,41 @@
     }
 
 &__name{
-  color: red;  
+  color: rgb(255, 0, 0);  
 }
 
 
 
-&__image{
-    width: 300px;
+
+
+
+
+ &__center {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  &__left {
+    flex: 0 0 40%;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+        width: 300px;
     border-radius: 20px;
-}
+  }
+
+
 
 &__date{
     color: rgb(255, 38, 0);
@@ -48,8 +76,28 @@ font-size: 40px;
 
 &__btn:hover{
     color: blue;
-}
 
+  }
+ &__center {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__right {
+    text-align: center;
+  }
+
+  &__image {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__btn {
+    width: 100%;
+  }
 
 
 @media (min-width:480px){
@@ -58,6 +106,11 @@ padding: 20px 10px;
     &__title {
       font-size: 28px;
     }
+
+
+
+
+
 
     &__name {
       font-size: 22px;
@@ -68,9 +121,7 @@ padding: 20px 10px;
       max-width: 300px;
     }
 
-    &__date {
-      font-size: 28px;
-    }
+
 
     &__about {
       font-size: 16px;
@@ -95,12 +146,14 @@ width: 100%;
     }
     }
 
- @media (min-width: 481px) and (max-width: 767px)   {
+ @media (min-width: 481px)    {
     padding: 30px 20px;
 
     &__title {
       font-size: 36px;
     }
+
+
 
     &__name {
       font-size: 26px;
@@ -158,8 +211,51 @@ width: 100%;
 }
 
 
+@media (min-width: 768px) and (max-width: 1199px) {
+  padding: 30px 20px;
 
+  &__center {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+  }
 
+  &__left {
+    flex: 0 0 40%;
+    min-width: 0;
+  }
+
+  &__right {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__btn {
+    display: inline-block;
+    width: auto;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+    color: yellow;
+    cursor: pointer;
+  }
+
+  &__date {
+    font-size: 28px;
+  }
+
+  &__place {
+    font-size: 22px;
+  }
+}
 
 
 
